@@ -3,15 +3,13 @@ package multiconversor.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
 
 import multiconversor.Recursos.API_Request;
 
 public class Model {
-	public List<Lista> symbolList = new ArrayList();
-	public List<Lista> temperaturaList = new ArrayList();
+	public List<Lista> symbolList = new ArrayList<>();
+	public List<Lista> temperaturaList = new ArrayList<>();
 	public List<Lista> longitudList = new ArrayList<>();
 	public List<Lista> pesoList = new ArrayList<>();
 	
