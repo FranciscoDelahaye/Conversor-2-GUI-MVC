@@ -75,31 +75,22 @@ public class Controller {
         	try {
         		if(this.model.getButtonActive() == "btnDivisa") {
             		this.model.setAPIResult(Double.parseDouble(this.view.getCantidadField()),this.view.getOrigenItem().toString(),this.view.getDestinoItem().toString());
-                	this.view.setResultadoText(this.model.getAPIResult());
+            		if(this.model.getCalculateResult()!=0)		this.view.setResultadoText(this.model.getCalculateResult());
             	}
             	if(this.model.getButtonActive() == "btnTemperatura") {
-            		this.model.setTemperaturaResult(Double.parseDouble(this.view.getCantidadField()),this.view.getOrigenItem().toString());
-            		if(this.view.getDestinoItem().toString()=="Celsius") {
-            			this.view.setResultadoText(this.model.getCelsius());
-            		}
-            		if(this.view.getDestinoItem().toString()=="Fahrenheit") {
-            			this.view.setResultadoText(this.model.getFahrenheit());
-            		}
-            		if(this.view.getDestinoItem().toString()=="Kelvin") {
-            			this.view.setResultadoText(this.model.getKelvin());
-            		}
+            		this.model.setTemperaturaResult(Double.parseDouble(this.view.getCantidadField()),this.view.getOrigenItem().toString(),this.view.getDestinoItem().toString());
+            		if(this.model.getCalculateResult()!=0)		this.view.setResultadoText(this.model.getCalculateResult());
             	}
             	if(this.model.getButtonActive() == "btnLongitud") {
             		this.model.setLongitudResult(Double.parseDouble(this.view.getCantidadField()),this.view.getOrigenItem().toString(),this.view.getDestinoItem().toString());
-            		this.view.setResultadoText(this.model.getLongitud());
+            		if(this.model.getCalculateResult()!=0)		this.view.setResultadoText(this.model.getCalculateResult());
             	}
     			if(this.model.getButtonActive() == "btnPeso") {
     				this.model.setPesoResult(Double.parseDouble(this.view.getCantidadField()),this.view.getOrigenItem().toString(),this.view.getDestinoItem().toString());
-            		this.view.setResultadoText(this.model.getPeso());
+    				if(this.model.getCalculateResult()!=0)		this.view.setResultadoText(this.model.getCalculateResult());
     			}
         	} catch (Exception ex) {
-        		this.view.setResultadoText(00000);
-        		ex.printStackTrace();
+        		this.view.setResultadoText(0);
 			}
         });        
 	}

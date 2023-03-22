@@ -31,15 +31,7 @@ public class Model {
 	
 	private String buttonNameActive=null;
 
-	private double apiResult = 0;
-	
-	private double temperaturaCelsius = 0;
-	private double temperaturaFahrenheit = 0;
-	private double temperaturaKelvin = 0;
-	
-	private double longitudResult = 0;
-	
-	private double pesoResult = 0;
+	private double calculateResult = 0;
 	
 	public Model() {
 		symbolList.add(0, new Lista("Peso Argentino", "ARS"));
@@ -102,45 +94,47 @@ public class Model {
 		return this.buttonNameActive;
 	}
 	
+	public void setCalculateResult(double value) {
+		this.calculateResult = value;
+	}
+	
+	public double getCalculateResult() {
+		return this.calculateResult;
+	}
+	
 	//Divisas
 	public void setAPIResult(double cantidad, String convertFrom, String convertTo) {
 		API_Request request = new API_Request();	
-		this.apiResult = request.getRequest(cantidad, convertFrom, convertTo);
-	}
-	public double getAPIResult() {
-		return this.apiResult;
+		setCalculateResult(request.getRequest(cantidad, convertFrom, convertTo));
 	}
 
 	//Temperatura
-	public void setTemperaturaResult(double cantidad, String convertFrom) {
+	public void setTemperaturaResult(double cantidad, String convertFrom, String convertTo) {
+		double temperaturaCelsius=0;
+		double temperaturaFahrenheit=0;
+		double temperaturaKelvin=0;
 		try {
 			if(convertFrom == "Celsius") {
-				this.temperaturaCelsius = cantidad;
-				this.temperaturaFahrenheit = (1.8*cantidad)+32;
-				this.temperaturaKelvin = cantidad+273;
+				temperaturaCelsius = cantidad;
+				temperaturaFahrenheit = (1.8*cantidad)+32;
+				temperaturaKelvin = cantidad+273;
 			}
 			if(convertFrom == "Fahrenheit") {
-				this.temperaturaCelsius = (cantidad-32)/1.8;
-				this.temperaturaFahrenheit = cantidad;
-				this.temperaturaKelvin = 5/9*(cantidad-32)+273.15;
+				temperaturaCelsius = (cantidad-32)/1.8;
+				temperaturaFahrenheit = cantidad;
+				temperaturaKelvin = 5/9*(cantidad-32)+273.15;
 			}
 			if(convertFrom == "Kelvin") {
-				this.temperaturaCelsius = cantidad-273.15;
-				this.temperaturaFahrenheit = 1.8*(cantidad-2733.15)+32;
-				this.temperaturaKelvin = cantidad;
+				temperaturaCelsius = cantidad-273.15;
+				temperaturaFahrenheit = 1.8*(cantidad-2733.15)+32;
+				temperaturaKelvin = cantidad;
 			}
+			if(convertTo == "Celsius")			setCalculateResult(temperaturaCelsius);
+			if(convertTo == "Fahrenheit")		setCalculateResult(temperaturaFahrenheit);
+			if(convertTo == "Kelvin")			setCalculateResult(temperaturaKelvin);
 		} catch (Exception e) {
-			e.printStackTrace();
+			setCalculateResult(0);
 		}
-	}
-	public double getCelsius() {
-		return this.temperaturaCelsius;
-	}
-	public double getFahrenheit() {
-		return this.temperaturaFahrenheit;
-	}
-	public double getKelvin() {
-		return this.temperaturaKelvin;
 	}
 	
 	//Longitud
@@ -152,11 +146,10 @@ public class Model {
 			if(convertTo == longitudList.get(i).getName())		destino = i;
 		}
 		if(cm != longitudList.size() && origen != longitudList.size() && destino != longitudList.size()) {
-			this.longitudResult = (cantidad * (longitudList.get(destino).getEquivalencia())) / (longitudList.get(origen).getEquivalencia());
+			setCalculateResult((cantidad * (longitudList.get(destino).getEquivalencia())) / (longitudList.get(origen).getEquivalencia()));
+		}else {
+			setCalculateResult(0);
 		}
-	}
-	public double getLongitud() {
-		return this.longitudResult;
 	}
 	
 	//Peso
@@ -168,10 +161,9 @@ public class Model {
 			if(convertTo == pesoList.get(i).getName())		destino = i;
 		}
 		if(g != pesoList.size() && origen != pesoList.size() && destino != pesoList.size()) {
-			this.pesoResult = (cantidad * (pesoList.get(destino).getEquivalencia())) / (pesoList.get(origen).getEquivalencia());
+			setCalculateResult((cantidad * (pesoList.get(destino).getEquivalencia())) / (pesoList.get(origen).getEquivalencia()));
+		} else {
+			setCalculateResult(0);
 		}
-	}
-	public double getPeso() {
-		return this.pesoResult;
 	}
 }

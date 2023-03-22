@@ -3,7 +3,6 @@ package multiconversor.View;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -24,15 +23,15 @@ public class View extends JFrame {
 	private JButton btnPeso;
 	private JButton btnConvertir;
 	
-	private ImageIcon btcDivisaIcon;
-	private ImageIcon btcTemperaturaIcon;
-	private ImageIcon btcLongitudIcon;
-	private ImageIcon btcPesoIcon;
+	private ImageIcon btnDivisaIcon;
+	private ImageIcon btnTemperaturaIcon;
+	private ImageIcon btnLongitudIcon;
+	private ImageIcon btnPesoIcon;
 	
-	private String btcDivisaIconeSrc = "src/multiconversor/Recursos/divisas.png";
-	private String btcTemperaturaIconSrc = "src/multiconversor/Recursos/temperaturas.png";
-	private String btcLongitudIconSrc = "src/multiconversor/Recursos/longitud.png";
-	private String btcPesoIconSrc = "src/multiconversor/Recursos/peso.png";
+	private String btnDivisaIconeSrc = "src/multiconversor/Recursos/divisas.png";
+	private String btnTemperaturaIconSrc = "src/multiconversor/Recursos/temperaturas.png";
+	private String btnLongitudIconSrc = "src/multiconversor/Recursos/longitud.png";
+	private String btnPesoIconSrc = "src/multiconversor/Recursos/peso.png";
 	
 	private JLabel titleLabel = new JLabel();
 	private JLabel origenLabel = new JLabel();
@@ -53,15 +52,15 @@ public class View extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         
-		btcDivisaIcon = new ImageIcon(resizeImage(btcDivisaIcon,btcDivisaIconeSrc,120, 120));
-		btcTemperaturaIcon = new ImageIcon(resizeImage(btcTemperaturaIcon,btcTemperaturaIconSrc,120, 120));
-		btcLongitudIcon = new ImageIcon(resizeImage(btcLongitudIcon,btcLongitudIconSrc,120, 120));
-		btcPesoIcon = new ImageIcon(resizeImage(btcPesoIcon,btcPesoIconSrc,120, 120));
+        btnDivisaIcon = new ImageIcon(resizeImage(btnDivisaIcon,btnDivisaIconeSrc,120, 120));
+        btnTemperaturaIcon = new ImageIcon(resizeImage(btnTemperaturaIcon,btnTemperaturaIconSrc,120, 120));
+        btnLongitudIcon = new ImageIcon(resizeImage(btnLongitudIcon,btnLongitudIconSrc,120, 120));
+        btnPesoIcon = new ImageIcon(resizeImage(btnPesoIcon,btnPesoIconSrc,120, 120));
 		
-		btnDivisa = new JButton(btcDivisaIcon);
-		btnTemperatura = new JButton(btcTemperaturaIcon);
-		btnLongitud = new JButton(btcLongitudIcon);
-		btnPeso = new JButton(btcPesoIcon);
+		btnDivisa = new JButton(btnDivisaIcon);
+		btnTemperatura = new JButton(btnTemperaturaIcon);
+		btnLongitud = new JButton(btnLongitudIcon);
+		btnPeso = new JButton(btnPesoIcon);
 		
 		btnDivisa.setBounds(20, 10, 130, 130);
 		btnTemperatura.setBounds(165, 10, 130, 130);
@@ -71,13 +70,11 @@ public class View extends JFrame {
 		btnConvertir = new JButton("CONVERTIR");
 		btnConvertir.setBounds(260, 500, 100, 50);
 		btnConvertir.setVisible(false);
-		add(btnConvertir);
 		
 		btnDivisa.setName("btnDivisa");
 		btnTemperatura.setName("btnTemperatura");
 		btnLongitud.setName("btnLongitud");
 		btnPeso.setName("btnPeso");
-		
 		
 		btnDivisa.setBackground(Color.LIGHT_GRAY);
 		btnTemperatura.setBackground(Color.LIGHT_GRAY);
@@ -116,6 +113,7 @@ public class View extends JFrame {
         add(btnTemperatura);
         add(btnLongitud);
         add(btnPeso);
+        add(btnConvertir);
         
         add(titleLabel);
         add(origenLabel);
