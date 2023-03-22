@@ -1,4 +1,4 @@
-<h1 align="center">Conversor GUI + MVC</h1>
+<h1 align="center">Conversor 2 (GUI + MVC)</h1>
 
 <h3 align="center">Convierta facilmente divisas, temperaturas, longitudes y peso</h3>
 
