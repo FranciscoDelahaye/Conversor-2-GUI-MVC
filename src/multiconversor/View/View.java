@@ -35,6 +35,7 @@ public class View extends JFrame {
 	
 	private JLabel titleLabel = new JLabel();
 	private JLabel origenLabel = new JLabel();
+	private JLabel cantidadLabel = new JLabel();
 	private JLabel destinoLabel = new JLabel();
 	
 	private JComboBox boxInputOrigen = new JComboBox<>();
@@ -67,8 +68,8 @@ public class View extends JFrame {
 		btnLongitud.setBounds(310, 10, 130, 130);
 		btnPeso.setBounds(455, 10, 130, 130);
 		
-		btnConvertir = new JButton("CONVERTIR");
-		btnConvertir.setBounds(260, 500, 100, 50);
+		btnConvertir = new JButton("CALCULAR");
+		btnConvertir.setBounds(167, 455, 300, 50);
 		btnConvertir.setVisible(false);
 		
 		btnDivisa.setName("btnDivisa");
@@ -81,30 +82,36 @@ public class View extends JFrame {
 		btnLongitud.setBackground(Color.LIGHT_GRAY);
 		btnPeso.setBackground(Color.LIGHT_GRAY);
 		
-		titleLabel.setBounds(105, 150, 400, 70);
+		titleLabel.setBounds(20, 150, 565, 70);
 		titleLabel.setFont(new Font("Arial", Font.BOLD, 25));
 		titleLabel.setHorizontalAlignment(JLabel.CENTER);
 		
-		origenLabel.setBounds(70, 200, 350, 70);
+		origenLabel.setBounds(50, 200, 300, 70);
 		origenLabel.setFont(new Font("Arial", Font.PLAIN, 18));
+		origenLabel.setHorizontalAlignment(JLabel.CENTER);
 		
-		destinoLabel.setBounds(70, 350, 350, 70);
+		cantidadLabel.setBounds(370, 200, 215, 70);
+		cantidadLabel.setFont(new Font("Arial", Font.PLAIN, 18));
+		cantidadLabel.setHorizontalAlignment(JLabel.CENTER);
+		
+		destinoLabel.setBounds(167, 320, 300, 70);
 		destinoLabel.setFont(new Font("Arial", Font.PLAIN, 18));
+		destinoLabel.setHorizontalAlignment(JLabel.CENTER);
 		
-		boxInputOrigen.setBounds(70, 250, 300, 70);
+		boxInputOrigen.setBounds(50, 250, 300, 70);
 		boxInputOrigen.setFont(new Font("Arial", Font.PLAIN, 20));
 		boxInputOrigen.setVisible(false);
 		
-		boxInputDestino.setBounds(70, 400, 300, 70);
+		boxInputDestino.setBounds(167, 370, 300, 70);
 		boxInputDestino.setFont(new Font("Arial", Font.PLAIN, 20));
 		boxInputDestino.setVisible(false);
 		
-		cantidadField.setBounds(390, 250, 200, 70);
+		cantidadField.setBounds(370, 250, 215, 70);
 		cantidadField.setFont(new Font("Arial", Font.PLAIN, 20));
 		cantidadField.setHorizontalAlignment(JTextField.CENTER);
 		cantidadField.setVisible(false);
 		
-		resultField.setBounds(390, 400, 200, 70);
+		resultField.setBounds(167, 520, 300, 60);
 		resultField.setFont(new Font("Arial", Font.PLAIN, 20));
 		resultField.setHorizontalAlignment(JTextField.CENTER);
 		resultField.setVisible(false);
@@ -117,6 +124,7 @@ public class View extends JFrame {
         
         add(titleLabel);
         add(origenLabel);
+        add(cantidadLabel);
         add(destinoLabel);
         
         add(cantidadField);
@@ -158,6 +166,10 @@ public class View extends JFrame {
 	}
 	public void setCantidadVisible(boolean flag) {
 		this.cantidadField.setVisible(flag);
+	}
+	//Cantidad Label
+	public void setCantidadLabelText(String text) {
+		this.cantidadLabel.setText(text);
 	}
 	
 	//Resultado Area

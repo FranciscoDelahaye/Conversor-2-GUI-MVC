@@ -15,6 +15,7 @@ public class Model {
 	
 	private JLabel titleLabel = new JLabel();
 	private JLabel origenLabel = new JLabel();
+	private JLabel cantidadLabel = new JLabel();
 	private JLabel destinoLabel = new JLabel();
 	
 	public String txtTitleDivisa = "DIVISAS";
@@ -82,6 +83,14 @@ public class Model {
 	}
 	public String getDestinoLabel() {
 		return destinoLabel.getText();
+	}
+	
+	//Cantidad Label
+	public void setCantidadLabelText(String text) {
+		this.cantidadLabel.setText(text);
+	}
+	public String getCantidadLabel() {
+		return cantidadLabel.getText();
 	}
 	
 	//Button activo

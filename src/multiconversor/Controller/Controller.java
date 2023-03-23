@@ -15,13 +15,13 @@ public class Controller {
         this.view.selectView(e -> {
         	this.view.boxInput1Clear();
         	this.view.boxInput2Clear();
+        	this.view.setCantidadText("1");
+        	this.view.setResultadoText(0);
         	try {
         		if(e.getSource() == this.view.getButtonDivisa()) {
         			this.model.setButtonActive(this.view.getButtonDivisa().getName());
         			this.model.setTitleLabelText(this.model.txtTitleDivisa);
-        			this.model.setOrigenLabelText("Seleccione cantidad y "+this.model.txtLabelDivisa+" origen.");
-        			this.model.setOrigenLabelText("Seleccione cantidad y "+this.model.txtLabelDivisa+" origen.");
-        			this.model.setDestinoLabelText("Seleccione escala a convertir.");
+        			this.model.setOrigenLabelText("Seleccione "+this.model.txtLabelDivisa+" origen");
         			for(int i=0; i<this.model.symbolList.size(); i++) {
         				this.view.boxInput1Add(this.model.symbolList.get(i).getSymbol());
         				this.view.boxInput2Add(this.model.symbolList.get(i).getSymbol());
@@ -30,8 +30,7 @@ public class Controller {
         		if(e.getSource() == this.view.getButtonTemperatura()) {
         			this.model.setButtonActive(this.view.getButtonTemperatura().getName());
         			this.model.setTitleLabelText(this.model.txtTitleTemperatura);
-        			this.model.setOrigenLabelText("Seleccione cantidad y "+this.model.txtLabelTemperatura+" origen.");
-        			this.model.setDestinoLabelText("Seleccione escala a convertir.");
+        			this.model.setOrigenLabelText("Seleccione "+this.model.txtLabelTemperatura+" origen");
         			for(int i=0; i<this.model.temperaturaList.size(); i++) {
         				this.view.boxInput1Add(this.model.temperaturaList.get(i).getName());
         				this.view.boxInput2Add(this.model.temperaturaList.get(i).getName());
@@ -40,8 +39,7 @@ public class Controller {
         		if(e.getSource() == this.view.getButtonLongitud()) {
         			this.model.setButtonActive(this.view.getButtonLongitud().getName());
         			this.model.setTitleLabelText(this.model.txtTitleLongitud);
-        			this.model.setOrigenLabelText("Seleccione cantidad y "+this.model.txtLabelLongitud+" origen.");
-        			this.model.setDestinoLabelText("Seleccione escala a convertir.");
+        			this.model.setOrigenLabelText("Seleccione "+this.model.txtLabelLongitud+" origen");
         			for(int i=0; i<this.model.longitudList.size(); i++) {
         				this.view.boxInput1Add(this.model.longitudList.get(i).getName());
         				this.view.boxInput2Add(this.model.longitudList.get(i).getName());
@@ -50,8 +48,7 @@ public class Controller {
         		if(e.getSource() == this.view.getButtonPeso()) {
         			this.model.setButtonActive(this.view.getButtonPeso().getName());
         			this.model.setTitleLabelText(this.model.txtTitlePeso);
-        			this.model.setOrigenLabelText("Seleccione cantidad y "+this.model.txtLabelPeso+" origen.");
-        			this.model.setDestinoLabelText("Seleccione escala a convertir.");
+        			this.model.setOrigenLabelText("Seleccione "+this.model.txtLabelPeso+" origen");
         			for(int i=0; i<this.model.pesoList.size(); i++) {
         				this.view.boxInput1Add(this.model.pesoList.get(i).getName());
         				this.view.boxInput2Add(this.model.pesoList.get(i).getName());
@@ -64,8 +61,10 @@ public class Controller {
         		this.view.setResultadoVisible(true);
         		this.view.setTitleLabelText("CONVERSOR DE "+this.model.getTitleLabel());
         		this.view.setOrigenLabelText(this.model.getOrigenLabel());
+        		this.model.setCantidadLabelText("Ingrese cantidad");
+        		this.view.setCantidadLabelText(this.model.getCantidadLabel());
+        		this.model.setDestinoLabelText("Convertir a");
         		this.view.setDestinoLabelText(this.model.getDestinoLabel());
-        		System.out.println(this.model.getButtonActive());
         	} catch (Exception ex) {
 				ex.printStackTrace();
 			}
