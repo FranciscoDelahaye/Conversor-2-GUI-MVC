@@ -2,7 +2,7 @@
 
 <h3 align="center">Convierta facilmente divisas, temperaturas, longitudes y peso</h3>
 
-![Conversor+GUI+MVC_image](https://user-images.githubusercontent.com/59628721/227061405-777db1b1-6bfd-4d5e-998b-69527b81ac34.png)
+![Conversor+GUI+MVC_image2](https://user-images.githubusercontent.com/59628721/227070049-74f9b113-14da-442d-a718-f8ee8fb1af09.png)
 
 
 ## Introducción
@@ -15,4 +15,4 @@ Arquitectura MVC.
 
 Si te gusta marca este proyecto con una estrella ⭐
 
-ESTADO: EN DESARROLLO (70% COMPLETADO)
+ESTADO: EN DESARROLLO (75% COMPLETADO)
