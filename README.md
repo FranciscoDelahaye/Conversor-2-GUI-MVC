@@ -2,8 +2,9 @@
 
 <h3 align="center">Convierta facilmente divisas, temperaturas, longitudes y peso</h3>
 
-![Conversor+GUI+MVC_image2](https://user-images.githubusercontent.com/59628721/227070049-74f9b113-14da-442d-a718-f8ee8fb1af09.png)
-
+<p align="center">
+  <a href="https://imgbox.com/5Koxx7kS" target="_blank"><img src="https://images2.imgbox.com/5a/07/5Koxx7kS_o.jpg" alt="image host"/></a>
+</p>
 
 ## Introducción
 
