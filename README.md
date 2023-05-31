@@ -42,5 +42,3 @@ Si te gusta marca este proyecto con una estrella ⭐
 ## API
 
 > Conversiones de divisas en tiempo real con la ayuda de APILayer - Exchange Rates Data API.
-
-ESTADO: EN DESARROLLO (80% COMPLETADO)
